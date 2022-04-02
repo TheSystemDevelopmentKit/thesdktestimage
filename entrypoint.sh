@@ -33,9 +33,9 @@ cd docs && git checkout main && git pull
 cp -rp ../build/html/* ./
 git add -A
 git config --global user.name "$GITHUB_ACTOR"
-git config --global user.email "$MAIL"
+git config --global user.email "${GITHUB_ACTOR}@noreply.github.com"
 git commit -m"Update docs" && 
-git remote set-url origin https://${TOKEN}@github.com/TheSystemDevelopmentKit/docs.git
+git remote set-url origin https://x-access-token:${TOKEN}@github.com/TheSystemDevelopmentKit/docs.git
 
 git push 
 
