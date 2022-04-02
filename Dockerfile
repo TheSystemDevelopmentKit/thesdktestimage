@@ -1,4 +1,3 @@
-ARG repo-token
 FROM fedora:34
 # Install everything needed
 RUN dnf -y install git python3 python3-devel python3-pip ncurses-devel gcc
