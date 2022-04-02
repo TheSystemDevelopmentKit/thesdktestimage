@@ -2,7 +2,7 @@
 name: 'Documentation builder'
 description: 'Build the documentation for the project'
 inputs:
-  repo-token:  # id of input
+  repo-toktok:  # id of input
     description: 'GITHUB_TOKEN'
     required: true
 outputs:
@@ -12,5 +12,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.repo-token }}
+    - ${{ inputs.repo-toktok }}
 
