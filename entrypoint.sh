@@ -29,6 +29,8 @@ git clone https://github.com/TheSystemDevelopmentKit/docs.git
 cd docs && git checkout main && git pull
 cp -rp ../build/html/* ./
 git add -A
+git config --global user.name "user name"
+git config --global user.email "user email"
 git commit -m"Update docs" && git push
 
 OUT="Success"
