@@ -1,5 +1,7 @@
 #/usr/bin/env bash
 
+echo "github token is $1"
+
 mkdir ${HOME}/.local
 mkdir ${HOME}/.local/bin
 PATH="${PATH}:${HOME}./local:${HOME}/.local/bin"
