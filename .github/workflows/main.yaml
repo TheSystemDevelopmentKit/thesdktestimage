@@ -1,7 +1,7 @@
 on: [push]
 
 jobs:
-  doc:build_job:
+  doc_build_job:
     runs-on: ubuntu-latest
     name: A job to build documentation
     steps:
