@@ -7,7 +7,6 @@ RUN mkdir /root/.local
 RUN mkdir /root/.local/bin
 ENV PATH="${PATH}:/root/.local:/root/.local/bin"
 ENV PYTHONPATH="/thesdk_template/Entities"
-RUN /thesdk_template/pip3userinstall.sh
 # Run the job
 ENTRYPOINT /entrypoint.sh
 
