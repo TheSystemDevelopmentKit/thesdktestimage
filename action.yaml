@@ -12,4 +12,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${GITHUB_TOKEN}
+    - ${{ inputs.repo-token }}
+
