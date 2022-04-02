@@ -25,7 +25,7 @@ cd ./doc/docstrings
 
 make html
 
-git clone git@github.com:TheSystemDevelopmentKit/docs.git
+git clone https://github.com/TheSystemDevelopmentKit/docs.git
 cd docs && git checkout main && git pull
 cp -rp ../build/html/* ./
 git add -A
