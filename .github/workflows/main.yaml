@@ -13,7 +13,7 @@ jobs:
         id: docbuilder
         uses: ./ # Uses an action in the root directory
         with:
-          repo-toktok: ${{ secrets.GITHUB_TOKEN }}
+          repo-toktok: ${{ secrets.THESYDEKICK_TOKEN }}
           #who-to-greet: 'Mona the Octocat'
       # Use the output from the `hello` step
       - name: Get the output string
