@@ -10,8 +10,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Documentation builder action
-        uses: ./ # Uses an action in the root directory
         id: docbuilder
+        uses: ./ # Uses an action in the root directory
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           #who-to-greet: 'Mona the Octocat'
