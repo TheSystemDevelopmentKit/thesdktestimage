@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/bin/sh -l
 
 echo "github token is $1"
 
