@@ -16,5 +16,5 @@ jobs:
           #who-to-greet: 'Mona the Octocat'
       # Use the output from the `hello` step
       - name: Get the output string
-        run: echo "Status: ${{ steps.docbuilder.outputs.outstring }}"
+        run: echo "Status is ${{ steps.docbuilder.outputs.outstring }}"
 
