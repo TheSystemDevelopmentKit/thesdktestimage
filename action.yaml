@@ -1,6 +1,10 @@
 # action.yml
 name: 'Documentation builder'
 description: 'Build the documentation for the project'
+inputs:
+  repo-token:  # id of input
+    description: 'GITHUB_TOKEN'
+    required: true
 outputs:
   outstring: # id of output (variable name)
     description: 'What was barfed by the docker action'

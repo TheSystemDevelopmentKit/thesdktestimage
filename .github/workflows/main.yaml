@@ -12,7 +12,8 @@ jobs:
       - name: Documentation builder action
         uses: ./ # Uses an action in the root directory
         id: docbuilder
-          #with:
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           #who-to-greet: 'Mona the Octocat'
       # Use the output from the `hello` step
       - name: Get the output string
