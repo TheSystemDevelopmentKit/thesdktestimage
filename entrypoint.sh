@@ -1,6 +1,7 @@
 #!/bin/sh -l
 
 echo "github token is $1"
+env
 
 mkdir ${HOME}/.local
 mkdir ${HOME}/.local/bin
