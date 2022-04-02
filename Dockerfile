@@ -4,9 +4,8 @@ RUN dnf -y install git python3 python3-devel python3-pip ncurses-devel gcc
 ADD --chown=root:root ./entrypoint.sh /entrypoint.sh
 run chmod 700 /entrypoint.sh 
 RUN mkdir ${HOME}/.local
-RUN mkdir ${HOME}.local/bin
-ENV PATH="${PATH}:${HOME}.local:${HOME}.local/bin"
-ENV PYTHONPATH="/thesdk_template/Entities"
+RUN mkdir ${HOME}/.local/bin
+ENV PATH="${PATH}:${HOME}./local:${HOME}/.local/bin"
 # Run the job
 ENTRYPOINT /entrypoint.sh
 

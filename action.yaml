@@ -2,7 +2,7 @@
 name: 'Documentation builder'
 description: 'Build the documentation for the project'
 outputs:
-  outsting: # id of output (variable name)
+  outstring: # id of output (variable name)
     description: 'What was barfed by the docker action'
 runs:
   using: 'docker'
