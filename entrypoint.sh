@@ -34,7 +34,8 @@ git add -A
 git config --global user.name "$GITHUB_ACTOR"
 git config --global user.email "$MAIL"
 git commit -m"Update docs" && 
-git remote set-url origin https://${GITHUB_ACTOR}:${TOKEN}/repo.git
+git remote set-url origin https://${GITHUB_ACTOR}:${TOKEN}@github.com/TheSystemDevelopmentKit/docs.git
+
 git push 
 
 OUT="Success"
