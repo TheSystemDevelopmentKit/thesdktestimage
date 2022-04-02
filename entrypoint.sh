@@ -1,8 +1,13 @@
 #/usr/bin/env bash
 
+mkdir ${HOME}/.local
+mkdir ${HOME}/.local/bin
+PATH="${PATH}:${HOME}./local:${HOME}/.local/bin"
+
 if [ -d ./thesdk_template ]; then
     rm -rf ./thesdk_template
 fi
+
 
 git clone https://github.com/TheSystemDevelopmentKit/thesdk_template.git 
 PYTHONPATH="$(pwd)/thesdk_template/Entities"
