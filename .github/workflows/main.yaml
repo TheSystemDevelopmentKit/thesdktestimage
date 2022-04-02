@@ -17,3 +17,4 @@ jobs:
       # Use the output from the `hello` step
       - name: Get the output string
         run: echo "The time was ${{ steps.docbuilder.outputs.outstring }}"
+
