@@ -5,6 +5,8 @@ if [ -d ./thesdk_template ]; then
 fi
 
 git clone https://github.com/TheSystemDevelopmentKit/thesdk_template.git 
+PYTHONPATH="$(pwd)/thesdk_template/Entities"
+export PYTHONPATH
 
 cd ./thesdk_template
 git checkout v1.8_RC
