@@ -7,5 +7,5 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-    args:
-      - ${{ secrets.GITHUB_TOKEN }}
+  args:
+    - ${{ secrets.GITHUB_TOKEN }}
