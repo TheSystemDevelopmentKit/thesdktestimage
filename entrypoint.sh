@@ -36,7 +36,8 @@ git config --global user.email "${GITHUB_ACTOR}@noreply.github.com"
 git commit -m"Update docs" && 
 git remote set-url origin https://x-access-token:${TOKEN}@github.com/TheSystemDevelopmentKit/docs.git
 
-echo "Actor ${GITHUB_ACTOR}"
+#echo "Actor ${GITHUB_ACTOR}"
+echo "Actor ecdbot"
 echo "Pushing to https://x-access-token:${TOKEN}@github.com/TheSystemDevelopmentKit/docs.git"
 git push 
 
