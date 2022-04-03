@@ -33,8 +33,8 @@ cp -rp ../build/html/* ./
 git add -A
 git config --global user.name "ecdbot"
 git config --global user.email "${GITHUB_ACTOR}@noreply.github.com"
-git commit -m"Update docs" && 
-git remote set-url origin https://x-access-token:${TOKEN}@github.com/TheSystemDevelopmentKit/docs.git
+git commit -m"Update docs" 
+git remote set-url origin "https://x-access-token:${TOKEN}@github.com/TheSystemDevelopmentKit/docs.git"
 
 #echo "Actor ${GITHUB_ACTOR}"
 echo "Actor ecdbot"
