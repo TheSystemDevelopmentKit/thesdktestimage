@@ -31,7 +31,7 @@ git clone https://github.com/TheSystemDevelopmentKit/docs.git
 cd docs && git checkout main && git pull
 cp -rp ../build/html/* ./
 git add -A
-git config --global user.name "$GITHUB_ACTOR"
+git config --global user.name "ecdbot"
 git config --global user.email "${GITHUB_ACTOR}@noreply.github.com"
 git commit -m"Update docs" && 
 git remote set-url origin https://x-access-token:${TOKEN}@github.com/TheSystemDevelopmentKit/docs.git
