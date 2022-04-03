@@ -1,6 +1,7 @@
 #!/bin/sh -l
 
 TOKEN=$1
+
 mkdir ${HOME}/.local
 mkdir ${HOME}/.local/bin
 PATH="${PATH}:${HOME}./local:${HOME}/.local/bin"
@@ -35,7 +36,7 @@ git config --global user.email "${GITHUB_ACTOR}@noreply.github.com"
 git commit -m"Update docs" && 
 git remote set-url origin https://x-access-token:${TOKEN}@github.com/TheSystemDevelopmentKit/docs.git
 
-
+echo "Pushing to https://x-access-token:${TOKEN}@github.com/TheSystemDevelopmentKit/docs.git"
 git push 
 
 OUT="Success"
