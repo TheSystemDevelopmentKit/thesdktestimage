@@ -1,5 +1,7 @@
 name: Build and Publish
 
+jobs:
+  image_build:
 on:
   # run it on push to the default repository branch
   push:
