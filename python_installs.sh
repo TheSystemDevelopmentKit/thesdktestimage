@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 #############################################################################
 # This is the script to install TheSyDeKick dependencies for the user 
 # 
