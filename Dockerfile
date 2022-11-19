@@ -1,6 +1,6 @@
 FROM fedora:34
 # Install everything needed
-RUN dnf -y install git python3 python3-devel python3-pip ncurses-devel gcc ngspice iverilog
+RUN dnf -y install git python3 python3-devel python3-pip ncurses-devel gcc ngspice iverilog findutils
 ADD --chown=root:root ./python_installs.sh /python_installs.sh
 RUN chmod 700 /python_installs.sh 
 RUN /python_installs.sh 
