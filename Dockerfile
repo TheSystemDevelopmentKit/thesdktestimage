@@ -10,10 +10,11 @@ RUN dnf -y install git python3 python3-devel python3-pip ncurses-devel gcc ngspi
 #RUN dnf -y install tcsh xterm make git screen vim-X11 wget gcc-gnat
 RUN dnf -y install wget gcc-gnat diffutils
 RUN dnf -y install zlib-devel
-RUN wget https://github.com/ghdl/ghdl/archive/refs/tags/v3.0.0.tar.gz && tar xzf v3.0.0.tar.gz && cd ghdl-3.0.0 && ./configure && make && make install
-ADD --chown=root:root ./python_installs.sh /python_installs.sh
-RUN chmod 700 /python_installs.sh 
-RUN /python_installs.sh 
+# Install GHDL from source
+RUN cd /root && wget https://github.com/ghdl/ghdl/archive/refs/tags/v3.0.0.tar.gz && tar xzf v3.0.0.tar.gz && cd ghdl-3.0.0 && ./configure && make && make install && cd /root && rm v3.0.0.tar.gz && rm -rf ghdl-3.0.0 
+ADD --chown=root:root ./python_installs.sh /root/python_installs.sh
+RUN chmod 700 /root/python_installs.sh 
+RUN /root/python_installs.sh && rm /root/python_installs.sh
 
 # Run the job MUST use exec format to pass parameters
 #ENTRYPOINT ["/entrypoint.sh"]
