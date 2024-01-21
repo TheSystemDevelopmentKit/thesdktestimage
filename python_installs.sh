@@ -54,6 +54,7 @@ PACKAGES="\
     sortedcontainers \
     bitstring \
     pyyaml \
+    serial \
 "
 
 for package in ${PACKAGES}; do
