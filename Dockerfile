@@ -1,4 +1,4 @@
-FROM fedora:36
+FROM fedora:38
 # Software installations from repositories
 RUN dnf -y install git python3 python3-devel python3-pip ncurses-devel gcc ngspice iverilog findutils
 #RUN dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-36.noarch.rpm

@@ -14,7 +14,7 @@ cat << EOF
  Written by Marko Pikkis Kosunen
 
  SYNOPSIS
-   pip3userinstall.sh [OPTIONS]
+   python_installs.sh [OPTIONS]
  DESCRIPTION
    Installs required Python packages locally to users ~/.local
  OPTIONS
