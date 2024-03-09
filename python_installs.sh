@@ -49,13 +49,23 @@ PACKAGES="\
     pandas \
     sphinx \
     sphinx_rtd_theme \
+    myst_parser \
     PyQt5 \
     pyelftools \
     sortedcontainers \
     bitstring \
     pyyaml \
-    serial \
+    python-gitlab \
+    urllib3 \
 "
+
+for package in ${PACKAGES}; do
+    echo "Installing ${package}"
+    ${PIP} ${UPGRADE} ${package}
+done
+
+exit 0
+
 
 for package in ${PACKAGES}; do
     echo "Installing ${package}"
