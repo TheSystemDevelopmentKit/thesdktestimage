@@ -28,7 +28,7 @@ RUN cd /root && wget https://github.com/ghdl/ghdl/archive/refs/tags/v3.0.0.tar.g
 # Yosys, contans also verilator and GHDL
 # This did not work yet
 RUN cd /usr/local && wget https://github.com/YosysHQ/oss-cad-suite-build/releases/download/2024-07-09/oss-cad-suite-linux-x64-20240709.tgz && tar xvzf ./oss-cad-suite-linux-x64-20240709.tgz && rm ./oss-cad-suite-linux-x64-20240709.tgz
-ENV PATH=${PATH}:/usr/local/oss-cad-suite/bin
+#ENV PATH=${PATH}:/usr/local/oss-cad-suite/bin
 
 
 # Run the job MUST use exec format to pass parameters
