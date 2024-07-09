@@ -17,7 +17,7 @@ RUN chmod 700 /root/python_installs.sh
 RUN /root/python_installs.sh && rm /root/python_installs.sh
 
 # Install GHDL from source
-#RUN cd /root && wget https://github.com/ghdl/ghdl/archive/refs/tags/v3.0.0.tar.gz && tar xzf v3.0.0.tar.gz && cd ghdl-3.0.0 && ./configure && make && make install && cd /root && rm v3.0.0.tar.gz && rm -rf ghdl-3.0.0
+RUN cd /root && wget https://github.com/ghdl/ghdl/archive/refs/tags/v3.0.0.tar.gz && tar xzf v3.0.0.tar.gz && cd ghdl-3.0.0 && ./configure && make && make install && cd /root && rm v3.0.0.tar.gz && rm -rf ghdl-3.0.0
 
 # Verilator install
 RUN dnf -y install autoconf g++ flex bison help2man
