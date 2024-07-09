@@ -9,7 +9,7 @@ build:
 run: 
 	docker run --device /dev/dri -it --rm \
 		ghcr.io/thesystemdevelopmentkit/thesdktestimage:latest \
-		echo 'Build OK'
+		sh -c 'echo $$PATH && verilator -V && ghdl -v && uname -a && ngspice -v'
 
 pull: 
 	docker pull  ghcr.io/thesystemdevelopmentkit/thesdktestimage:latest
