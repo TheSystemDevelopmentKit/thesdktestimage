@@ -17,19 +17,31 @@ RUN chmod 700 /root/python_installs.sh
 RUN /root/python_installs.sh && rm /root/python_installs.sh
 
 # Install GHDL from source
-RUN cd /root && wget https://github.com/ghdl/ghdl/archive/refs/tags/v3.0.0.tar.gz && tar xzf v3.0.0.tar.gz && cd ghdl-3.0.0 && ./configure && make && make install && cd /root && rm v3.0.0.tar.gz && rm -rf ghdl-3.0.0
+ARG GHDL_VERSION=4.1.0
+RUN cd /root && wget https://github.com/ghdl/ghdl/archive/refs/tags/v${GHDL_VERSION}.tar.gz \
+    && tar xzf v${GHDL_VERSION}.tar.gz \
+    && cd ghdl-${GHDL_VERSION} \
+    && ./configure \
+    && make \
+    && make install \
+    && cd /root \
+    && rm v${GHDL_VERSION}.tar.gz \
+    && rm -rf ghdl-${GHDL_VERSION}
 
 # Verilator install
-RUN dnf -y install autoconf g++ flex bison help2man
-#RUN git clone https://github.com/verilator/verilator
-#RUN unset VERILATOR_ROOT
+RUN dnf -y install autoconf g++ flex bison help2man perl perl-version perl-FindBin
+RUN git clone https://github.com/verilator/verilator
+RUN unset VERILATOR_ROOT
 #RUN cd verilator && git pull && git checkout v5.026 && autoconf && ./configure   && make && make test && make install
+RUN cd verilator && git pull && git checkout stable && autoconf && ./configure   && make && make test && make install
+
+ENV PATH=${PATH}:/usr/local/bin
 
 # Yosys, contans also verilator and GHDL
 # This did not work yet
-RUN dnf -y install perl perl-FindBin
-RUN cd /usr/local && wget https://github.com/YosysHQ/oss-cad-suite-build/releases/download/2024-07-09/oss-cad-suite-linux-x64-20240709.tgz && tar xvzf ./oss-cad-suite-linux-x64-20240709.tgz && rm ./oss-cad-suite-linux-x64-20240709.tgz
-ENV PATH=${PATH}:/usr/local/oss-cad-suite/bin
+#RUN dnf -y install perl perl-FindBin
+#RUN cd /usr/local && wget https://github.com/YosysHQ/oss-cad-suite-build/releases/download/2024-07-09/oss-cad-suite-linux-x64-20240709.tgz && tar xvzf ./oss-cad-suite-linux-x64-20240709.tgz && rm ./oss-cad-suite-linux-x64-20240709.tgz
+#ENV PATH=${PATH}:/usr/local/oss-cad-suite/bin
 
 
 # Run the job MUST use exec format to pass parameters
