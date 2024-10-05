@@ -41,7 +41,7 @@ done
 PACKAGES="\
     wheel \
     gnureadline \
-    numpy \
+    numpy>=1.26.0,<=1.26.4 \
     numpydoc \
     matplotlib \
     joblib \
@@ -49,7 +49,7 @@ PACKAGES="\
     pandas \
     sphinx \
     sphinx_rtd_theme \
-    myst_parser \
+    myst-parser \
     PyQt5 \
     pyelftools \
     sortedcontainers \
@@ -58,14 +58,6 @@ PACKAGES="\
     python-gitlab \
     urllib3 \
 "
-
-for package in ${PACKAGES}; do
-    echo "Installing ${package}"
-    ${PIP} ${UPGRADE} ${package}
-done
-
-exit 0
-
 
 for package in ${PACKAGES}; do
     echo "Installing ${package}"
