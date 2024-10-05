@@ -24,6 +24,7 @@ RUN apt-get -y install qttools5-dev
 
 # Prerequisites for verilator
 RUN apt-get -y install git help2man perl python3 make autoconf g++ flex bison ccache
+RUN apt-get -y install python3-sphinx
 RUN apt-get -y install libgoogle-perftools-dev numactl perl-doc
 RUN apt-get -y install libfl2  # Ubuntu only (ignore if gives error)
 RUN apt-get -y install libfl-dev  # Ubuntu only (ignore if gives error)
@@ -62,6 +63,7 @@ RUN cd verilator \
     && make \
     && make test \
     && make install
+
 
 ENV PATH=${PATH}:/usr/local/bin
 
