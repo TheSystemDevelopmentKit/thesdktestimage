@@ -6,9 +6,9 @@ RUN apt-get -y install tcsh xterm screen xsel
 RUN apt-get -y install iverilog
 RUN apt-get -y install gnat
 RUN apt-get -y install libzstd-dev
-RUN apt-get -y install libngspice0
 RUN apt-get -y install wget diffutils
 RUN apt-get -y install build-essential
+
 # This is to install vim noninteractively.
 #RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install vim-gtk3
 
@@ -23,8 +23,7 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y  install libqt5\*dev
 RUN apt-get -y install qttools5-dev
 
 # Prerequisites for verilator
-RUN apt-get -y install git help2man perl python3 make autoconf g++ flex bison ccache
-RUN apt-get -y install python3-sphinx
+RUN apt-get -y install git help2man perl make autoconf g++ flex bison ccache python3 python3-pip
 RUN apt-get -y install libgoogle-perftools-dev numactl perl-doc
 RUN apt-get -y install libfl2  # Ubuntu only (ignore if gives error)
 RUN apt-get -y install libfl-dev  # Ubuntu only (ignore if gives error)
@@ -37,6 +36,9 @@ RUN apt-get -y install zlib1g zlib1g-dev  # Ubuntu only (ignore if gives error)
 ADD --chown=root:root ./python_installs.sh /root/python_installs.sh
 RUN chmod 700 /root/python_installs.sh
 RUN /root/python_installs.sh && rm /root/python_installs.sh
+
+# Install ngspice
+RUN apt-get -y install libngspice0 ngspice gwave
 
 # Install GHDL from source
 ARG GHDL_VERSION=4.1.0
@@ -63,7 +65,6 @@ RUN cd verilator \
     && make \
     && make test \
     && make install
-
 
 ENV PATH=${PATH}:/usr/local/bin
 

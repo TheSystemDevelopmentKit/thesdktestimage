@@ -61,7 +61,7 @@ PACKAGES="\
 
 for package in ${PACKAGES}; do
     echo "Installing ${package}"
-    ${PIP} ${UPGRADE} ${package}
+    ${PIP} ${UPGRADE} ${package} || exit 1
 done
 
 exit 0
