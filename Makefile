@@ -28,5 +28,6 @@ help:
 	 @echo "    run"
 	 @echo "    pull"
 	 @echo "    push"
+	 @echo "    debug"
 	 @echo "    all : build run"
 
