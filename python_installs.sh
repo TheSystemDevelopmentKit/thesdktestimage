@@ -57,7 +57,7 @@ PACKAGES="\
     pyyaml \
     python-gitlab \
     urllib3 \
-    psf_utils \
+    psf-utils \
     ply \
     inform \
     quantiphy \
