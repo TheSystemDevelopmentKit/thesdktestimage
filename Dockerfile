@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 RUN apt-get update
 # Software installations from repositories
-RUN apt upgrade
+RUN apt-get -y upgrade
 RUN apt-get -y install tcsh xterm screen xsel
 RUN apt-get -y install iverilog
 RUN apt-get -y install gnat
