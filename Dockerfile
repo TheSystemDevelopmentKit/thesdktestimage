@@ -8,10 +8,10 @@ RUN apt-get -y install gnat
 RUN apt-get -y install libzstd-dev
 RUN apt-get -y install wget diffutils
 RUN apt-get -y install build-essential
+RUN apt-get -y install curl
 
 # This is to install vim noninteractively.
 #RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install vim-gtk3
-
 
 #RUN dnf -y install wget gcc-gnat diffutils
 #RUN dnf -y install zlib-devel
